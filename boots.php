@@ -14,7 +14,7 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 // header('Access-Control-Max-Age: 1728000');
 // header("Content-Length: 0");
 
-$qArr = array();
+$qArr = array(); 
 $where = "";
 
 $path  = explode("/", $_GET['path']);
