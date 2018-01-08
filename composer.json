@@ -1,0 +1,5 @@
+{
+    "require": {
+        "firehed/jwt": "^2.0"
+    }
+}

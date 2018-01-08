@@ -1,0 +1,25 @@
+{
+    "name": "firehed/jwt",
+    "description": "JSON Web Token tools",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Eric Stern",
+            "email": "eric@ericstern.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Firehed\\JWT\\": ["src/", "tests/"]
+        }
+    },
+    "require": {
+        "firehed/arctools": "*@dev",
+        "firehed/common": "*@dev",
+        "firehed/security": "^1.0",
+        "php": ">=7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    }
+}

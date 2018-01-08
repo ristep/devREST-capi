@@ -1,0 +1,10 @@
+{
+    "phabricator.uri": "https://phabricator.ericstern.com",
+    "unit.engine": "Firehed\\Arctools\\Unit\\PHPUnitTestEngine",
+    "https.blindly-trust-domains": [
+        "phabricator.ericstern.com"
+    ],
+    "load": [
+        "src/"
+    ]
+}

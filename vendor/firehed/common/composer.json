@@ -1,0 +1,23 @@
+{
+    "name": "firehed/common",
+    "description": "Common PHP tools",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Eric Stern",
+            "email": "eric@ericstern.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Firehed\\Common\\": ["src/", "tests/"]
+        }
+    },
+    "require-dev": {
+        "firehed/arctools": "1.*",
+        "phpunit/phpunit": "*"
+    },
+    "require": {
+        "paragonie/random_compat": "^2.0"
+    }
+}
