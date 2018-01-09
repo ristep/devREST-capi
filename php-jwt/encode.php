@@ -8,7 +8,7 @@ $token = array (
   'admin' => true,
   'jti' => 'dcab10a2-f6b4-4bc0-9534-4f2209922bbd',
   'iat' => 1515445735,
-  'exp' => 1515449335,
+  'exp' => 1515449335
 );
 
 $jwt = JWT::encode($token, "AiSFMyNTYiLCJ0eXAiOiAiSldpansoft20234123");
