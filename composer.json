@@ -1,5 +1,6 @@
 {
     "require": {
-        "firehed/jwt": "^2.0"
+        "firehed/jwt": "^2.0",
+        "firebase/php-jwt": "^5.0"
     }
 }
