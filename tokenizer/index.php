@@ -5,15 +5,25 @@ $skey = "AiSFMyNTYiLCJ0eXAi234123";
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
-header('Access-Control-Allow-Methods: GET,POST,PUT,DELETE,OPTIONS');
+header('Access-Control-Allow-Methods: POST');
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+
+if( $_SERVER['REQUEST_METHOD'] != 'POST'){
+	require_once "../echoErr.php";
+	echoErr(  (object)[ 'error' => 'inifile', 'code' => 400, 'message' => 'Bad Request'  ] );
+}
 
 $cn = require "../conn.php";
 
 try { 
-	$sql = "select id,name,email,password from users where name='".$_POST['name']."'";
+	$sql = "select id,name,email,password,role from users where name=:name";
 	$sth = $cn->prepare($sql);
-  $sth->execute();
+  $sth->bindParam(':name', $_POST['name'], PDO::PARAM_STR);
+	$sth->execute();
+	if( $sth->rowCount() < 1 ) {
+		require_once "../echoErr.php";
+		echoErr(  (object)[ 'error' => 'inifile', 'code' => 401, 'message' => 'Unauthorized nema go'  ] );
+		}
 	$result = $sth->fetch(PDO::FETCH_OBJ);
 // hashenbashen na passwordot
 	if($_POST['password']==$result->password){
