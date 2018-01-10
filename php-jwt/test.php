@@ -2,14 +2,12 @@
 require "../vendor/autoload.php";
 use \Firebase\JWT\JWT;
 
-$key = "AiSFMyNTYiLCJ0eXAiOiAiSldpansoft20234123";
+$skey = "AiSFMyNTYiLCJ0eXAi234123";
 $token = array(
     "name" => "rispan",
 		"email" => "ristepan@gmail.com",
-		"mesto" => "kavadarci",
-		"admin" => true,
-		'sub' => '1234567890',
-		'jti' => 'dcab10a2-f6b4-4bc0-9534-4f2209922bbd'
+		"role" => 'admin',
+		'jti' => 'deca-meca-4bc0-jade-423e34-nogu'
 );
 
 /**
@@ -23,8 +21,6 @@ $decoded = JWT::decode($jwt, $key, array('HS256'));
 
 print($jwt);
 
-echo '\r\n';
-
 print_r($decoded);
 
 /*
@@ -34,6 +30,7 @@ print_r($decoded);
 
 $decoded_array = (array) $decoded;
 
+print_r($decoded);
 /**
  * You can add a leeway to account for when there is a clock skew times between
  * the signing and verifying servers. It is recommended that this leeway should

@@ -38,7 +38,7 @@ try{
     echoErr($err);
 }
 
-//var_dump($slj);
+// var_dump($slj);
 
 $input  = json_decode(file_get_contents("php://input"));
 
