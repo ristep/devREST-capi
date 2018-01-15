@@ -2,7 +2,7 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
 header('Access-Control-Allow-Methods: GET,POST,PUT,DELETE');
-header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, Cincilation, X-Requested-With");
+header("Access-Control-Allow-Headers: *, Content-Type, Access-Control-Allow-Headers, Authorization, Cincilation, X-Requested-With");
 
 // header('Access-Control-Allow-Headers: X-PINGARUNER');
 // header('Access-Control-Max-Age: 1728000');
@@ -62,12 +62,15 @@ if(isset($path[1]))
 switch ($method) {
     case 'PUT': // update
         try {
-            $ss = array();
-            foreach($input as $pl => $vl) array_push($ss, "`$pl`='$vl'");
+						$ss = array();
+						$prepo = array();
+						foreach($input as $pl => $vl) array_push($ss, "`$pl`=:$pl");
+						foreach($input as $pl => $vl) $prepo[':'.$pl] = $vl ;
 						$sql = "UPDATE `$slj->tableName` SET ".implode(',',$ss)." $where;";
 						if( strlen(trim($where)) > 6 ){
-            	file_put_contents('sqlDump.txt', $sql."\n", FILE_APPEND );
-							$cn->exec($sql);
+							file_put_contents('sqlDump.txt', $sql."\n", FILE_APPEND );
+							$sth = $cn->prepare($sql);
+							$sth->execute($prepo);
 						}else
 								echoErr(  (object)[ 'error' => 'tokenator', 'code' => 416, 'message' => 'Requested Range Not Satisfiable'  ] );
         } catch (PDOException $e) { echoErr( $e ); }
