@@ -2,6 +2,9 @@
 require "../vendor/autoload.php";
 use \Firebase\JWT\JWT;
 
+$hed = (getallheaders());
+print($hed['Authorization']);
+
 $skey = "AiSFMyNTYiLCJ0eXAi234123";
 $token = array(
     "name" => "rispan",

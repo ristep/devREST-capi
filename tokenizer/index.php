@@ -1,7 +1,7 @@
 <?php
 require "../vendor/autoload.php";
 use \Firebase\JWT\JWT;
-$skey = "AiSFMyNTYiLCJ0eXAi234123";
+$skey = md5("FMyNTYiLCJ0eX5".date("ymd"));
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
@@ -23,7 +23,7 @@ try {
 	if( $sth->rowCount() < 1 ) {
 		require_once "../echoErr.php";
 		echoErr(  (object)[ 'error' => 'inifile', 'code' => 401, 'message' => 'Unauthorized nema go'  ] );
-		}
+	}
 	$result = $sth->fetch(PDO::FETCH_OBJ);
 // hashenbashen na passwordot
 	if($_POST['password']==$result->password){
@@ -32,11 +32,13 @@ try {
 			"name" => $result->name,
 			"email" => $result->email,
 			"role" => $result->role,
-			'jti' => 'deca-meca-4bc0-'.$result->id.'jade-423e34-nogu'
+			'jti' => 'deca-meca-'.date("ymdhhmm").'-jade-'.mt_rand().'-nogu'
 		);
 		$jwt = JWT::encode($token, $skey);
+		// sleep(2);
 		echo $jwt;
-		// print_r( JWT::decode($jwt, $skey, array('HS256')) );
+	  // sleep(2);	
+		// print_r( JWT::decode($jwt, md5("FMyNTYiLCJ0eX5".date("Y-m-d")), array('HS256')) );
 	 	die();
 	}
 	else{

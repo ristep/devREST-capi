@@ -1,18 +1,19 @@
 <?php
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json");
+header('Access-Control-Allow-Methods: GET,POST,PUT,DELETE');
+header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, Cincilation, X-Requested-With");
+
+// header('Access-Control-Allow-Headers: X-PINGARUNER');
+// header('Access-Control-Max-Age: 1728000');
+// header("Content-Length: 0");
+
 // aj za proba
 ini_set('display_errors', 'On');
 error_reporting(E_ALL);
 
 require_once "echoErr.php";
-
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json");
-header('Access-Control-Allow-Methods: GET,POST,PUT,DELETE,OPTIONS');
-header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
-
-// header('Access-Control-Allow-Headers: X-PINGARUNER');
-// header('Access-Control-Max-Age: 1728000');
-// header("Content-Length: 0");
+$userData = require_once('tokento.php');
 
 $qArr = array(); 
 $where = "";
@@ -41,6 +42,7 @@ try{
 // var_dump($slj);
 
 $input  = json_decode(file_get_contents("php://input"));
+// file_put_contents('inputDump.txt', print_r($input,true), FILE_APPEND );
 
 $cn = require "conn.php";
 
@@ -62,22 +64,27 @@ switch ($method) {
         try {
             $ss = array();
             foreach($input as $pl => $vl) array_push($ss, "`$pl`='$vl'");
-
-            $sql = "UPDATE `$slj->tableName` SET ".implode(',',$ss)." $where;";
-            var_dump($sql);
-            $cn->exec($sql);
+						$sql = "UPDATE `$slj->tableName` SET ".implode(',',$ss)." $where;";
+						if( strlen(trim($where)) > 6 ){
+            	file_put_contents('sqlDump.txt', $sql."\n", FILE_APPEND );
+							$cn->exec($sql);
+						}else
+								echoErr(  (object)[ 'error' => 'tokenator', 'code' => 416, 'message' => 'Requested Range Not Satisfiable'  ] );
         } catch (PDOException $e) { echoErr( $e ); }
     break;
-    case 'POST': // new record
-        try { 
-            $ss = array();
-            $lkk = array();
-            foreach($input as $pl => $vl){
-                array_push($ss,"`$pl`");
-                array_push($lkk,"'$vl'");
-            } 
-            $sql = "INSERT INTO $slj->tableName(".implode(',',$ss).") VALUES (".implode(',',$lkk).");";
-            $cn->exec($sql);
+		case 'POST': // new record
+				try
+				{ 		
+				  $ss = array();
+          $lkk = array();
+					foreach($input as $pl => $vl){
+            array_push($ss,"`$pl`");
+            array_push($lkk,"'$vl'");
+          } 
+//					file_put_contents('udaa.txt', print_r($input,true), FILE_APPEND );
+					$sql = "INSERT INTO $slj->tableName(".implode(',',$ss).") VALUES (".implode(',',$lkk).");";
+//					file_put_contents('udaa.txt', print_r($sql, true), FILE_APPEND );
+          $cn->exec($sql);
         } catch (PDOException $e) { echoErr( $e ); } 
     break;
     case 'GET':
