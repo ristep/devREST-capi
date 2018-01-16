@@ -48,15 +48,19 @@ $cn = require "conn.php";
 
 if(isset($path[1]))
 {
-    $kk = array();
+		$kk = array();
+		$kp = array();
+		$keys = array();
     $i=0;
     foreach($slj->keyColumns as $fk){
-        if(isset($path[++$i]))
-            array_push($kk,"`$fk`='".$path[$i]."'");
-        else
-            array_push($kk,"`$fk`='".$input->$fk."'");
-    }
-    $where ="WHERE ".implode(' and ',$kk);
+    	if(isset($path[++$i])){
+					array_push($kk,"`$fk`='".$path[$i]."'");
+					array_push($kp,"`$fk`=:$fk");
+					$keys[':'.$fk] = $path[$i];   
+			}		
+		}
+		$where ="WHERE ".implode(' and ',$kk);
+		$wherp ="WHERE ".implode(' and ',$kp);
 }
 
 switch ($method) {
@@ -64,10 +68,13 @@ switch ($method) {
         try {
 						$ss = array();
 						$prepo = array();
-						foreach($input as $pl => $vl) array_push($ss, "`$pl`=:$pl");
-						foreach($input as $pl => $vl) $prepo[':'.$pl] = $vl ;
-						$sql = "UPDATE `$slj->tableName` SET ".implode(',',$ss)." $where;";
-						if( strlen(trim($where)) > 6 ){
+						foreach($input as $pl => $vl) {
+							array_push($ss, "`$pl`=:$pl");
+							$prepo[':'.$pl] = $vl;
+						}
+						$prepo = array_merge($prepo,$keys);
+						$sql = "UPDATE `$slj->tableName` SET ".implode(',',$ss)." $wherp;";
+						if( strlen(trim($wherp)) > 6 ){
 							file_put_contents('sqlDump.txt', $sql."\n", FILE_APPEND );
 							$sth = $cn->prepare($sql);
 							$sth->execute($prepo);
@@ -134,7 +141,6 @@ switch ($method) {
 				}					
 
 				// echo $sql;die();
-			
         try { 
             $sth = $cn->prepare($sql);
             $sth->execute();
