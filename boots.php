@@ -75,7 +75,7 @@ switch ($method) {
 						$prepo = array_merge($prepo,$keys);
 						$sql = "UPDATE `$slj->tableName` SET ".implode(',',$ss)." $wherp;";
 						if( strlen(trim($wherp)) > 6 ){
-							file_put_contents('sqlDump.txt', $sql."\n", FILE_APPEND );
+							// file_put_contents('sqlDump.txt', $sql."\n", FILE_APPEND );
 							$sth = $cn->prepare($sql);
 							$sth->execute($prepo);
 						}else
@@ -91,9 +91,8 @@ switch ($method) {
             array_push($ss,"`$pl`");
             array_push($lkk,"'$vl'");
           } 
-//					file_put_contents('udaa.txt', print_r($input,true), FILE_APPEND );
 					$sql = "INSERT INTO $slj->tableName(".implode(',',$ss).") VALUES (".implode(',',$lkk).");";
-//					file_put_contents('udaa.txt', print_r($sql, true), FILE_APPEND );
+					// file_put_contents('sqlDump.txt', $sql."\n", FILE_APPEND );
           $cn->exec($sql);
         } catch (PDOException $e) { echoErr( $e ); } 
     break;
@@ -149,10 +148,11 @@ switch ($method) {
             echo json_encode($result);
         } catch (PDOException $e) { echoErr( $e ); } 
     break;
-    case 'DELETE':
-        $sql = "DELETE FROM `$slj->tableName` $where;";
+		case 'DELETE':
+				$sql = "DELETE FROM `$slj->tableName` $wherp;";
+				file_put_contents('sqlDump.txt', print_r($keys), FILE_APPEND );
         $sth = $cn->prepare($sql);
-        $sth->execute();
+        $sth->execute($keys);
     break;
     default:
         try {

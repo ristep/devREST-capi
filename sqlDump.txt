@@ -39,3 +39,17 @@ UPDATE `foods` SET `name`=:name WHERE `id`=:id;
 UPDATE `users` SET `first_name`=:first_name WHERE `id`=:id;
 UPDATE `foods` SET `name`=:name,`fat`=:fat WHERE `id`=:id;
 UPDATE `foods` SET `protein`=:protein WHERE `id`=:id;
+UPDATE `foods` SET `fat`=:fat WHERE `id`=:id;
+UPDATE `foods` SET `calories`=:calories WHERE `id`=:id;
+INSERT INTO foods() VALUES ();
+INSERT INTO foods(`name`,`calories`,`fat`) VALUES ('Jango','12','aw');
+INSERT INTO foods(`name`,`calories`,`fat`,`carbs`) VALUES ('Jungo','2','2','2');
+INSERT INTO foods(`name`,`calories`,`fat`,`carbs`,`protein`) VALUES ('Jungo','2','2','2','3');
+INSERT INTO foods(`name`,`calories`,`fat`,`carbs`,`protein`) VALUES ('Спанаќ','0','1','2','25');
+INSERT INTO foods(`sodium`,`calcium`,`iron`,`name`,`calories`) VALUES ('33','23','23','Леќа','н2ма');
+INSERT INTO foods(`name`,`calories`,`fat`,`carbs`,`protein`,`sodium`,`iron`) VALUES ('Леќа','12','22','22','22','11','2');
+DELETE FROM `foods` WHERE `id`='undefined';
+DELETE FROM `foods` WHERE `id`=:id;
+DELETE FROM `foods` WHERE `id`=:id;
+DELETE FROM `foods` WHERE `id`=:id;
+111111
