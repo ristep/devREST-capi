@@ -1,55 +1,48 @@
-UPDATE `users` SET `state`='Liberija ' WHERE `id`='1';
-UPDATE `users` SET `state`='Liberija' WHERE `id`='1';
-UPDATE `users` SET `address`='Смокварска 34/12c' WHERE `id`='1';
-UPDATE `users` SET `address`='Смокварска 34/12' WHERE `id`='1';
-UPDATE `foods` SET `protein`='43' WHERE `id`='2';
-UPDATE `foods` SET `protein`='43',`name`='Ekler' WHERE `id`='3';
-UPDATE `foods` SET  WHERE `id`='3';
-UPDATE `foods` SET `name`='Ice cream sandwich aaa' WHERE `id`='2';
-UPDATE `foods` SET `name`='Ice cream sandwich' WHERE `id`='2';
-UPDATE `foods` SET `name`='Ice cream sandwich' WHERE `id`='3';
-UPDATE `foods` SET `name`='Ekler bre' WHERE `id`='3';
-UPDATE `foods` SET `name`='Ekler bre' WHERE `id`='3';
-UPDATE `foods` SET `name`='Ekler bre' WHERE `id`='2';
-UPDATE `foods` SET `name`='Ice cream sandwich' WHERE `id`='2';
-UPDATE `foods` SET `name`='Ice cream sandwich' WHERE `id`='3';
-UPDATE `foods` SET `name`='Ice cream sandwich' WHERE `id`='2';
-UPDATE `foods` SET `name`='Ice cream sandwich' WHERE `id`='2';
-UPDATE `foods` SET `name`='Ice cream sandwich' WHERE `id`='3';
-UPDATE `foods` SET `name`='Tolumba' WHERE `id`='3';
-UPDATE `foods` SET  WHERE `id`='2';
-UPDATE `foods` SET `name`='Cupcake ' WHERE `id`='4';
-UPDATE `foods` SET  WHERE `id`='7';
-UPDATE `foods` SET  WHERE `id`='8';
-UPDATE `foods` SET `name`='Бурек со урда, za ribi' WHERE `id`='12';
-UPDATE `foods` SET `name`='Gingerbread, sss' WHERE `id`='5';
-UPDATE `foods` SET `name`='Бурек со урда, 'ribi'' WHERE `id`='12';
-UPDATE `foods` SET `name`='Бурек со урда, za "ribi"' WHERE `id`='12';
-UPDATE `foods` SET  WHERE `id`='4';
-UPDATE `foods` SET `name`='Cupcake  ',`calories`='305 ' WHERE `id`='4';
-UPDATE `foods` SET `name`=:Cupcake ,`calories`=:305 WHERE `id`='4';
-UPDATE `foods` SET `name`=:name,`calories`=:calories WHERE `id`='5';
-UPDATE `foods` SET `name`=:name,`calories`=:calories WHERE `id`='3';
-UPDATE `foods` SET `name`=?,`calories`=? WHERE `id`='12';
-UPDATE `foods` SET `name`=:name,`calories`=:calories WHERE `id`='12';
-UPDATE `users` SET `second_name`=:second_name,`state`=:state WHERE `id`='1';
-UPDATE `foods` SET `fat`=:fat WHERE `id`='7';
-UPDATE `foods` SET  WHERE `id`='4';
-UPDATE `foods` SET `name`=:name WHERE `id`=:id;
-UPDATE `users` SET `first_name`=:first_name WHERE `id`=:id;
-UPDATE `foods` SET `name`=:name,`fat`=:fat WHERE `id`=:id;
-UPDATE `foods` SET `protein`=:protein WHERE `id`=:id;
-UPDATE `foods` SET `fat`=:fat WHERE `id`=:id;
-UPDATE `foods` SET `calories`=:calories WHERE `id`=:id;
-INSERT INTO foods() VALUES ();
-INSERT INTO foods(`name`,`calories`,`fat`) VALUES ('Jango','12','aw');
-INSERT INTO foods(`name`,`calories`,`fat`,`carbs`) VALUES ('Jungo','2','2','2');
-INSERT INTO foods(`name`,`calories`,`fat`,`carbs`,`protein`) VALUES ('Jungo','2','2','2','3');
-INSERT INTO foods(`name`,`calories`,`fat`,`carbs`,`protein`) VALUES ('Спанаќ','0','1','2','25');
-INSERT INTO foods(`sodium`,`calcium`,`iron`,`name`,`calories`) VALUES ('33','23','23','Леќа','н2ма');
-INSERT INTO foods(`name`,`calories`,`fat`,`carbs`,`protein`,`sodium`,`iron`) VALUES ('Леќа','12','22','22','22','11','2');
-DELETE FROM `foods` WHERE `id`='undefined';
-DELETE FROM `foods` WHERE `id`=:id;
-DELETE FROM `foods` WHERE `id`=:id;
-DELETE FROM `foods` WHERE `id`=:id;
-111111
+UPDATE `users` SET `first_name`=:first_name,`address`=:address WHERE `id`=:id;
+stdClass Object
+(
+    [first_name] => Марко Xverkata
+    [address] => 123454 $input object
+)
+
+aj prepo
+Array
+(
+    [first_name] => Марко Xverkata
+    [address] => 123454 $input object
+    [id] => 2
+)
+
+UPDATE `users` SET `address`=:address,`first_name`=:first_name WHERE `id`=:id;
+stdClass Object
+(
+    [address] => 123454 $input object aman
+    [first_name] => Марко toroko
+)
+
+aj prepo
+Array
+(
+    [address] => 123454 $input object aman
+    [first_name] => Марко toroko
+    [id] => 2
+)
+
+UPDATE `users` SET `address`=:address,`state`=:state,`first_name`=:first_name WHERE `id`=:id;
+stdClass Object
+(
+    [address] => 123454 Sea e taman
+    [state] => Dabile 
+    [first_name] => Марко
+)
+
+aj prepo
+Array
+(
+    [address] => 123454 Sea e taman
+    [state] => Dabile 
+    [first_name] => Марко
+    [id] => 2
+)
+
+1INSERT INTO foods(`name`,`calories`,`fat`) VALUES ('Najprvo bez prepare','12','233');

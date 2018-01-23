@@ -56,7 +56,7 @@ if(isset($path[1]))
     	if(isset($path[++$i])){
 					array_push($kk,"`$fk`='".$path[$i]."'");
 					array_push($kp,"`$fk`=:$fk");
-					$keys[':'.$fk] = $path[$i];   
+					$keys[$fk] = $path[$i];   
 			}		
 		}
 		$where ="WHERE ".implode(' and ',$kk);
@@ -67,17 +67,11 @@ switch ($method) {
     case 'PUT': // update
         try {
 						$ss = array();
-						$prepo = array();
-						foreach($input as $pl => $vl) {
-							array_push($ss, "`$pl`=:$pl");
-							$prepo[':'.$pl] = $vl;
-						}
-						$prepo = array_merge($prepo,$keys);
+						foreach($input as $pl => $vl) array_push($ss, "`$pl`=:$pl");
 						$sql = "UPDATE `$slj->tableName` SET ".implode(',',$ss)." $wherp;";
 						if( strlen(trim($wherp)) > 6 ){
-							// file_put_contents('sqlDump.txt', $sql."\n", FILE_APPEND );
 							$sth = $cn->prepare($sql);
-							$sth->execute($prepo);
+							$sth->execute(array_merge((array)$input,$keys));
 						}else
 								echoErr(  (object)[ 'error' => 'tokenator', 'code' => 416, 'message' => 'Requested Range Not Satisfiable'  ] );
         } catch (PDOException $e) { echoErr( $e ); }
@@ -92,7 +86,7 @@ switch ($method) {
             array_push($lkk,"'$vl'");
           } 
 					$sql = "INSERT INTO $slj->tableName(".implode(',',$ss).") VALUES (".implode(',',$lkk).");";
-					// file_put_contents('sqlDump.txt', $sql."\n", FILE_APPEND );
+					file_put_contents('sqlDump.txt', $sql."\n", FILE_APPEND );
           $cn->exec($sql);
         } catch (PDOException $e) { echoErr( $e ); } 
     break;
