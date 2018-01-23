@@ -29,14 +29,10 @@ if( isset($ruti[$path[0]])){
 }else
     $pth = 'sql.ini/'.$path[0].'.ini';
 
-try{
-    if(file_exists($pth)){
-        $slj = (object) parse_ini_file($pth);
-    }else{
-        echoErr(  (object)[ 'error' => 'inifile', 'code' => 404, 'message' => 'Not Found'  ] );
-    }
-} catch(Exception $err) {
-    echoErr($err);
+if(file_exists($pth)){
+    $slj = (object) parse_ini_file($pth);
+}else{
+    echoErr(  (object)[ 'error' => 'inifile', 'code' => 404, 'message' => 'Not Found'  ] );
 }
 
 // var_dump($slj);
@@ -73,22 +69,26 @@ switch ($method) {
 							$sth = $cn->prepare($sql);
 							$sth->execute(array_merge((array)$input,$keys));
 						}else
-								echoErr(  (object)[ 'error' => 'tokenator', 'code' => 416, 'message' => 'Requested Range Not Satisfiable'  ] );
-        } catch (PDOException $e) { echoErr( $e ); }
+								echoErr( (object)[ 'error' => 'DataBase', 'code' => 304, 'message' => 'Not Modified'  ] );
+        } catch (PDOException $e) { 
+					echoErr((object)[ 'error' => 'DataBase', 'code' => 416, 'message' => 'Requested Range Not Satisfiable', 'PDO' => $e  ] ); 
+				}
     break;
-		case 'POST': // new record
+		case 'POST': // new record (insert into)
 				try
 				{ 		
 				  $ss = array();
           $lkk = array();
 					foreach($input as $pl => $vl){
             array_push($ss,"`$pl`");
-            array_push($lkk,"'$vl'");
+            array_push($lkk,":$pl");
           } 
 					$sql = "INSERT INTO $slj->tableName(".implode(',',$ss).") VALUES (".implode(',',$lkk).");";
-					file_put_contents('sqlDump.txt', $sql."\n", FILE_APPEND );
-          $cn->exec($sql);
-        } catch (PDOException $e) { echoErr( $e ); } 
+					$sth = $cn->prepare($sql);
+					$rez = $sth->execute((array)$input);
+		} catch (PDOException $e) { 
+			echoErr((object)[ 'error' => 'DataBase', 'code' => 416, 'message' => 'Requested Range Not Satisfiable', 'PDO' => $e  ] );  
+		} 
     break;
     case 'GET':
 				
@@ -132,19 +132,18 @@ switch ($method) {
 				if(isset($qArr["count"])){
 					$sql = preg_replace("/(?<=select )(.*)(?= from )/i", "count(1) count", $sql);
 				}					
-
-				// echo $sql;die();
         try { 
             $sth = $cn->prepare($sql);
             $sth->execute();
 						$result = $sth->fetchAll(PDO::FETCH_CLASS);
 						//$result[$sth->rowCount()] = ["count" => $sth->rowCount(), "cuci" => 'Reserved']; 
             echo json_encode($result);
-        } catch (PDOException $e) { echoErr( $e ); } 
+        } catch (PDOException $e) { 
+					echoErr((object)[ 'error' => 'DataBase', 'code' => 204, 'message' => 'No contend', 'PDO' => $e  ] ); 
+				} 
     break;
 		case 'DELETE':
 				$sql = "DELETE FROM `$slj->tableName` $wherp;";
-				file_put_contents('sqlDump.txt', print_r($keys), FILE_APPEND );
         $sth = $cn->prepare($sql);
         $sth->execute($keys);
     break;
