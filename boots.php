@@ -44,19 +44,16 @@ $cn = require "conn.php";
 
 if(isset($path[1]))
 {
-		$kk = array();
-		$kp = array();
-		$keys = array();
-    $i=0;
-    foreach($slj->keyColumns as $fk){
-    	if(isset($path[++$i])){
-					array_push($kk,"`$fk`='".$path[$i]."'");
-					array_push($kp,"`$fk`=:$fk");
-					$keys[$fk] = $path[$i];   
-			}		
-		}
-		$where ="WHERE ".implode(' and ',$kk);
-		$wherp ="WHERE ".implode(' and ',$kp);
+	$kp = array();
+	$keys = array();
+  $i=0;
+  foreach($slj->keyColumns as $fk){
+   	if(isset($path[++$i])){
+			array_push($kp,"`$fk`=:$fk");
+			$keys[$fk] = $path[$i];   
+		}		
+	}
+	$where = "WHERE ".implode(' and ',$kp);
 }
 
 switch ($method) {
@@ -64,8 +61,8 @@ switch ($method) {
         try {
 						$ss = array();
 						foreach($input as $pl => $vl) array_push($ss, "`$pl`=:$pl");
-						$sql = "UPDATE `$slj->tableName` SET ".implode(',',$ss)." $wherp;";
-						if( strlen(trim($wherp)) > 6 ){
+						$sql = "UPDATE `$slj->tableName` SET ".implode(',',$ss)." $where;";
+						if( strlen(trim($where)) > 6 ){
 							$sth = $cn->prepare($sql);
 							$sth->execute(array_merge((array)$input,$keys));
 						}else
@@ -95,6 +92,7 @@ switch ($method) {
 				if( isset($slj->likeColumns) && isset($qArr["like"]) ) { 
 					$zapata = " like '%".$qArr["like"]."%' or ";
 					$lklString = str_replace( ',',$zapata,$slj->likeColumns ) . " like '%".$qArr["like"]."%' ";
+					// file_put_contents('inputDump.txt', $lklString."\n", FILE_APPEND );
 					// print($lklString);		
 				}
 
@@ -114,7 +112,7 @@ switch ($method) {
         }
 
 				if(isset($lklString)){
-					if($where!=""){
+					if($where != ""){
 						$where .= " and ($lklString)";
 					}else{
 						$where = " WHERE $lklString";
@@ -131,19 +129,21 @@ switch ($method) {
 				$count = "";
 				if(isset($qArr["count"])){
 					$sql = preg_replace("/(?<=select )(.*)(?= from )/i", "count(1) count", $sql);
-				}					
+				}		
+				file_put_contents('inputDump.txt', $sql."\n", FILE_APPEND );
         try { 
             $sth = $cn->prepare($sql);
-            $sth->execute();
+            $sth->execute([2]);
 						$result = $sth->fetchAll(PDO::FETCH_CLASS);
 						//$result[$sth->rowCount()] = ["count" => $sth->rowCount(), "cuci" => 'Reserved']; 
+						file_put_contents('outputDump.txt', json_encode($result)."\n", FILE_APPEND );
             echo json_encode($result);
         } catch (PDOException $e) { 
 					echoErr((object)[ 'error' => 'DataBase', 'code' => 204, 'message' => 'No contend', 'PDO' => $e  ] ); 
 				} 
     break;
 		case 'DELETE':
-				$sql = "DELETE FROM `$slj->tableName` $wherp;";
+				$sql = "DELETE FROM `$slj->tableName` $where;";
         $sth = $cn->prepare($sql);
         $sth->execute($keys);
     break;
