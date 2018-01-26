@@ -1,5 +1,0 @@
-SELECT * FROM `users`   
-SELECT * FROM `users`   
-SELECT * FROM `foods`   
-SELECT * FROM `users`   
-SELECT * FROM `foods`   

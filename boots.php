@@ -8,9 +8,9 @@ header("Access-Control-Allow-Headers: *, Content-Type, Access-Control-Allow-Head
 // header('Access-Control-Max-Age: 1728000');
 // header("Content-Length: 0");
 
-// aj za proba
-ini_set('display_errors', 'On');
-error_reporting(E_ALL);
+// aj za proba, onadeni u /etc/php/7.1/apache2/php.ini
+// ini_set('display_errors', 'On');
+// error_reporting(E_ALL);
 
 require_once "echoErr.php";
 $userData = require_once('tokento.php');
@@ -42,10 +42,10 @@ $input  = json_decode(file_get_contents("php://input"));
 
 $cn = require "conn.php";
 
+$keys = [];
 if(isset($path[1]))
 {
 	$kp = array();
-	$keys = array();
   $i=0;
   foreach($slj->keyColumns as $fk){
    	if(isset($path[++$i])){
@@ -96,44 +96,39 @@ switch ($method) {
 					// print($lklString);		
 				}
 
-        if(isset($qArr["filter"])) 
-            $filt = $qArr["filter"];
-        if(isset($qArr["where"])) 
-            $filt = $qArr["where"];
-        if(isset($qArr["uslov"])) 
-            $filt = $qArr["uslov"];
+        if(isset($qArr["filter"])) $filt = $qArr["filter"];
+        if(isset($qArr["where"]))  $filt = $qArr["where"];
+        if(isset($qArr["uslov"]))  $filt = $qArr["uslov"];
             
-        if(isset($filt)){
-            if($where!=""){
-                $where .= " and $filt";
-            }else{
-                $where = " WHERE $filt";
-            }
-        }
+        if(isset($filt))
+					if($where!="") 
+						$where .= " and $filt";
+					else
+						$where  = " WHERE $filt";
 
-				if(isset($lklString)){
-					if($where != ""){
+				if(isset($lklString))
+					if($where != "")
 						$where .= " and ($lklString)";
-					}else{
-						$where = " WHERE $lklString";
-					}
-				}
+					else
+						$where  = " WHERE $lklString";
 
         $order = "";
-        if(isset($qArr["order"]))   $order = " order by ".$qArr["order"];
+				if(isset($qArr["order"]))
+					$order = " order by ".$qArr["order"];
    
         $limit = "";
-        if(isset($qArr["limit"]))   $limit = " limit ".$qArr["limit"];
+				if(isset($qArr["limit"]))
+					$limit = " limit ".$qArr["limit"];
 		
 				$sql = $slj->select." $where $order $limit";
 				$count = "";
-				if(isset($qArr["count"])){
+				if(isset($qArr["count"]))
 					$sql = preg_replace("/(?<=select )(.*)(?= from )/i", "count(1) count", $sql);
-				}		
-				file_put_contents('inputDump.txt', $sql."\n", FILE_APPEND );
+			
+				file_put_contents('keysDump.txt', print_r($keys,true)."\n".'Amana be daa', FILE_APPEND );
         try { 
             $sth = $cn->prepare($sql);
-            $sth->execute([2]);
+            $sth->execute($keys);
 						$result = $sth->fetchAll(PDO::FETCH_CLASS);
 						//$result[$sth->rowCount()] = ["count" => $sth->rowCount(), "cuci" => 'Reserved']; 
 						file_put_contents('outputDump.txt', json_encode($result)."\n", FILE_APPEND );
