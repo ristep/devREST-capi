@@ -1,7 +1,8 @@
 <?php
 require "./vendor/autoload.php";
 use \Firebase\JWT\JWT;
-$skey = md5("FMyNTYiLCJ0eX5180112");
+//$skey = md5("FMyNTYiLCJ0eX5180112");
+$skey = md5("FMyNTYiLCJ0eX5".date("ymd"));
 
 if($_SERVER['REQUEST_METHOD']=='OPTIONS') die();
 

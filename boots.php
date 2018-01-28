@@ -1,8 +1,8 @@
 <?php
-header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
 header('Access-Control-Allow-Methods: GET,POST,PUT,DELETE');
-header("Access-Control-Allow-Headers: *, Content-Type, Access-Control-Allow-Headers, Authorization, Cincilation, X-Requested-With");
+header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
+header("Access-Control-Allow-Origin: *");
 
 // header('Access-Control-Allow-Headers: X-PINGARUNER');
 // header('Access-Control-Max-Age: 1728000');
@@ -88,14 +88,11 @@ switch ($method) {
 		} 
     break;
     case 'GET':
-				
 				if( isset($slj->likeColumns) && isset($qArr["like"]) ) { 
 					$zapata = " like '%".$qArr["like"]."%' or ";
 					$lklString = str_replace( ',',$zapata,$slj->likeColumns ) . " like '%".$qArr["like"]."%' ";
 					// file_put_contents('inputDump.txt', $lklString."\n", FILE_APPEND );
-					// print($lklString);		
 				}
-
         if(isset($qArr["filter"])) $filt = $qArr["filter"];
         if(isset($qArr["where"]))  $filt = $qArr["where"];
         if(isset($qArr["uslov"]))  $filt = $qArr["uslov"];
@@ -125,14 +122,12 @@ switch ($method) {
 				if(isset($qArr["count"]))
 					$sql = preg_replace("/(?<=select )(.*)(?= from )/i", "count(1) count", $sql);
 			
-				file_put_contents('keysDump.txt', print_r($keys,true)."\n".'Amana be daa', FILE_APPEND );
-        try { 
+	      try { 
             $sth = $cn->prepare($sql);
             $sth->execute($keys);
 						$result = $sth->fetchAll(PDO::FETCH_CLASS);
-						//$result[$sth->rowCount()] = ["count" => $sth->rowCount(), "cuci" => 'Reserved']; 
-						file_put_contents('outputDump.txt', json_encode($result)."\n", FILE_APPEND );
-            echo json_encode($result);
+						// $result[$sth->rowCount()] = ["count" => $sth->rowCount(), "cuci" => 'Reserved']; 
+	          echo json_encode($result);
         } catch (PDOException $e) { 
 					echoErr((object)[ 'error' => 'DataBase', 'code' => 204, 'message' => 'No contend', 'PDO' => $e  ] ); 
 				} 
@@ -148,6 +143,3 @@ switch ($method) {
         } catch (Exception $e) { echoErr( $e ); } 
     break;
 }
-
-// print_r($result);
-// echo json_encode($data);
