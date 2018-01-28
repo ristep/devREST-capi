@@ -26,6 +26,7 @@ else{
 	$password = $input->password;
 }
 
+// clear
 file_put_contents('inputDump.txt', $username . ' ' . $password . "\n", FILE_APPEND );
 
 try { 
@@ -40,7 +41,7 @@ try {
 	$result = $sth->fetch(PDO::FETCH_OBJ);
 
 	// hashenbashen na passwordot
-	if($password==$result->password){
+	if($password===$result->password){
 		$token = array(
 			"id" => $result->id,
 			"name" => $result->name,
