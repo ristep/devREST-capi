@@ -1,8 +1,9 @@
 <?php
 header("Content-Type: application/json");
-header('Access-Control-Allow-Methods: GET,POST,PUT,DELETE');
-header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
-header("Access-Control-Allow-Origin: *");
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
+header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token, Authorization, X-Requested-With');
+// header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
 
 require "../vendor/autoload.php";
 use \Firebase\JWT\JWT;
@@ -30,7 +31,7 @@ else{
 file_put_contents('inputDump.txt', $username . ' ' . $password . "\n", FILE_APPEND );
 
 try { 
-	$sql = "select id,name,email,password,role from users where name=:name";
+	$sql = "select * from users where name=:name";
 	$sth = $cn->prepare($sql);
   $sth->bindParam(':name', $username, PDO::PARAM_STR);
 	$sth->execute();
@@ -46,14 +47,21 @@ try {
 			"id" => $result->id,
 			"name" => $result->name,
 			"email" => $result->email,
+			"firstName" => $result->first_name,
+			"secondName" => $result->second_name,
+			// "address" => $result->address,
+			// "state" => $result->state,
+			// "place" => $result->place,
 			"role" => $result->role,
-			'time' => date("ymdhhmmss"),
-			'jti' => 'deca-meca-'.date("ymdhhmm").'-jade-'.mt_rand().'-nogu'
+			// 'time' => date("ymdHms"),
+			"jti" => 'deca-meca-'.date("ymdhms").'-jade-'.mt_rand().'-nogu'
 		);
 		$jwt = JWT::encode($token, $skey);
 		// sleep(2);
-		echo $jwt;
-	  // sleep(2);	
+		$token['jti'] = date("y-m-d H:m:s");
+		$token['auToken'] = $jwt;
+		echo json_encode($token);	  
+		// sleep(2);	
 		// print_r( JWT::decode($jwt, md5("FMyNTYiLCJ0eX5".date("Y-m-d")), array('HS256')) );
 	 	die();
 	}

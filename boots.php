@@ -1,8 +1,8 @@
 <?php
 header("Content-Type: application/json");
-header('Access-Control-Allow-Methods: GET,POST,PUT,DELETE');
-header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
 header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS");
+header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token, Authorization, X-Requested-With');
 
 // header('Access-Control-Allow-Headers: X-PINGARUNER');
 // header('Access-Control-Max-Age: 1728000');
