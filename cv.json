@@ -1,0 +1,194 @@
+{
+	"name": "Riste Panovski",
+	"adress": "Siska 50, Kavadarci, Municipality of Kavadarci 1430",
+	"homtetel": "043400555",
+	"mobitel": "07021892",
+	"e-mail": "ristepan@gmail.com",
+	"sities": [
+		"arso.us.to",
+		"smanzy.us.to"
+	],
+	"profesonalsummary": {
+		"title": "Professional Summary",
+		"items": [
+			"Newly promoted senior developer with exceptional customer relationship building and communication skills. Well-educated in all areas of marketing, social media, and audio/visual development. Looking to obtain a role in web development in a cutting edge environment. ",
+			"Determined web developer offering more than [Number] years of expertise in fast-paced departments. Bilingual and well-spoken with the ability to work closely with people of all different backgrounds and personalities. Seeking an opportunity to oversee a team of exceptional developers in a well-established company. ",
+			"Veteran systems architect with expertise in coding, application design, defined architectures and successful project leadership. ",
+			"Systems architect with expertise in requirement gathering and analysis, architectural, component and interface design and development for web-based applications in multiple domains.",
+		]
+	},
+	"skills": {
+		"title": "Skills",
+		"items": [
+			"Java/C/C++",
+			"Expert in C++, PHP, and JavaScript",
+			"Python and Ruby proficient",
+			"Database design",
+			"Excellent problem-solving abilities",
+			"Windows and Linux",
+			"Android",
+			"Website and portal monitoring",
+			"Network maintenance",
+			"System upgrades",
+			"System backups",
+			"Data backup and retrieval",
+			"Technical specifications creation",
+			"Wordpress, Joomla, Drupal",
+			"Excellent diagnostic skills",
+		]
+	},
+	"workHistory": {
+		"title": "Work History",
+		"items": [{
+				"begin": "July 2017",
+				"end": "Current",
+				"title": "Web Developer",
+				"company": "Freelancer",
+				"place": "Kavadarci, macedonia",
+				"items": [
+					"Hands-on experience using UNIX and Apache web servers.",
+					"Implemented Google Campaigns and SEO for various types of websites.",
+					"Designed, implemented and monitored web pages and sites for continuous improvement in a fast-paced environment.",
+					"Utilized programming capabilities in PHP, SQL and JavaScript and other libraries as needed.",
+					"Converted mockups into HTML, JavaScript, AJAX and JSON."
+				]
+			},
+			{
+				"begin": "October 2004-June",
+				"end": "June2017",
+				"title": "Full Stack Developer",
+				"company": "NetArt - multimedia",
+				"place": "Kavadarci, Macedonia",
+				"items": [
+					"Developed and implemented complex Internet and Intranet applications on multiple platforms.",
+					"Provided continued maintenance and development of bug fixes and patch sets for existing web applications.",
+					"Ensured network, system and data availability and integrity through preventative maintenance and upgrades.",
+					"Built application platform foundation to support migration from client-server product lines to enterprise architectures and services.",
+					"Developed work-flow charts and diagrams to ensure production team compliance with client deadlines.",
+					"Managed firewall, network monitoring, and server monitoring both on- and off-site.",
+					"Developed data architecture design to enable analysts to perform targeted customer analysis."
+				]
+			},
+			{
+				"begin": "September 1998",
+				"end": "May 2004",
+				"title": "System Administrator",
+				"company": "CodEx - computers",
+				"place": "Kavadarci, Macedonia",
+				"items": [
+					"Developed and created software applications for Linux and Windows systems.",
+					"Developed shared central authentication system in C++ for intranet applications.",
+					"Coded eigh websites using HTML and PHP.",
+					"Wrote C++ applications in Windows VCL architecture, using Borland C++ Builder.",
+					"Analyzed and designed relational databases using SQL.",
+					"Developed object-oriented software with Borland C++ builder.",
+					"Developed object-oriented software using Borland Delphi.",
+					"Built databases and table structures following n-tier architecture methodology for client-server applications.",
+					"Diagnosed and troubleshooting UNIX and Windows processing problems and applied solutions to increase company efficiency.",
+					"Ensured network, system and data availability and integrity through preventative maintenance and upgrades.",
+					"Streamlined and enhanced the corporate accounting and operations system.",
+					"Managed firewall, network monitoring, and server monitoring both on- and off-site.",
+					"Provided methodologies for object-oriented software development and efficient database design.",
+					"Designed and implemented new server standards for core business services.",
+				]
+			},
+			{
+				"begin": "June 1987",
+				"end": "August 1998",
+				"title": " Senior Developer",
+				"company": "LamurExport",
+				"place": "Kavadarci, Macedonia",
+				"items": [
+					"Gathered, organized and analyzed data on programs.",
+					"Trained and mentored junior developers and engineers.",
+					"Worked closely with customers to efficiently resolve issues.",
+					"Reviewed code and correct errors.",
+					"Collaborated with team members to create application's system analysis based on client requirements.",
+					"Worked with users to gather requirements and evaluate ease of use.",
+					"Built, tested and deployed scalable, highly available and modular software products.",
+					"Designed and developed transactional and analytical data structures.",
+					"Built databases and table structures following n-tier architecture methodology for web applications.",
+					"Modified existing software to correct errors, adapt to new hardware and improve performance.",
+					"Designed updates to existing software to meet changing customer demands.",
+					"Developed programs from the ground up using a measured, market-focused approach.",
+				]
+			},
+			{
+				"begin": "May 1995",
+				"end": "May 1997",
+				"title": "Software Developer and System Administrator",
+				"company": "CAOP - Kavadarci",
+				"place": "Kavadarci, Macedonia",
+				"items": [
+					"Wrote clean, clear and well-tested code for various projects.",
+					"Led a team of 3 developers in the analysis and rebuild of software from the ground up through completion.",
+					"Designed and developed reports in SQL Server Reporting Services.",
+					"Modified existing software to correct errors, adapt to new hardware and improve performance.",
+					"Drafted comprehensive reports to document bugs and design flaws.",
+					"Wrote C++ applications in DOS architecture.",
+					"Wrote Pascal applications in DOS architecture.",
+					"Wrote Clipper applications in DOS architecture.",
+					"Built, tested and deployed scalable, highly available and modular software products.",
+					"Designed and developed transactional and analytical data structures.",
+					"Developed shared central authentication system in C++ for intranet applications.",
+					"Modified existing software to correct errors, adapt to new hardware and improve performance.",
+					"Implemented innovative systems for data collection, storage, and management of customer orders.",
+					"Worked closely with clients to establish problem specifications and system designs.",
+					"Wrote Clipper applications in client-server architecture.",
+					"Designed intuitive graphical user interfaces using knowledge of serial communications and database design.",
+					"Analyzed and designed relational databases.",
+					"Configured, installed and tested IBM OS/2 systems.",
+					"Configured, tested and maintained network equipment.",
+					"Planned and implemented upgrades to system hardware and software.",
+					"Set up staff workstations with PCs, phones, and laptops.",
+				]
+			},
+			{
+				"begin": "May 1994",
+				"end": "May 1996",
+				"title": "Teaching Intern",
+				"company": "Computer Scool - Lida Mara",
+				"place": "Kavadarci, Macedonia",
+				"items": [
+					"Created a classroom environment in which children could learn respect for themselves and others."
+				]
+			},
+			{
+				"begin": "January 1991",
+				"end": "May 1995",
+				"title": "Electronic Systems Maintenance Technician",
+				"company": "FENI - industry",
+				"place": "Kavadarci, Macedonia",
+				"items": [
+					"Installed, repaired and tested electrical and electronic systems.",
+					"Measured and read DMM, meggers, micrometers and thickness gauges using electrical and mechanical testing instruments.",
+					"Installed electrical conduit and wiring for power, controls, and lighting.",
+					"Maintained and repaired solenoids and regulators on co-generation systems.",
+					"Operated and maintained electronic transmitting and receiving equipment, as well as digital and analog computers.",
+					"Tested, troubleshot and calibrated equipment in the shop and in the field.",
+					"Monitored control system software and stored software in secure locations.",
+					"Completed daily inspections of all electronic equipment.",
+					"Obtained measurements and readings using volt and ohmmeters, meggers, IC testers and dial indicators.",
+				]
+			}
+		]
+	},
+	"education": {
+		"title": "Education",
+		"items": [{
+				"year": 1982,
+				"degree": "High School Diploma",
+				"field": "Computer operator",
+				"scool": "Gimnazija Josip Broz Tito, Kavadarci",
+				"place": "Kavadarci, Macedonia"
+			},
+			{
+				"year": 1998,
+				"degree": "Associate of Science",
+				"field": "Informatics and telecomunication",
+				"scool": "Elektrotehnicki fakultet Skopje",
+				"place": "Skopje"
+			}
+		]
+	}
+}

@@ -127,7 +127,7 @@ switch ($method) {
             $sth->execute($keys);
 						$result = $sth->fetchAll(PDO::FETCH_CLASS);
 						// $result[$sth->rowCount()] = ["count" => $sth->rowCount(), "cuci" => 'Reserved']; 
-	          echo json_encode($result);
+	          echo json_encode($result,JSON_NUMERIC_CHECK + JSON_PRESERVE_ZERO_FRACTION);
         } catch (PDOException $e) { 
 					echoErr((object)[ 'error' => 'DataBase', 'code' => 204, 'message' => 'No contend', 'PDO' => $e  ] ); 
 				} 
