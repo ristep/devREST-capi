@@ -1,72 +1,85 @@
 {
 	"name": "Riste Panovski",
+	"jobtitle": "Full Stack Developer, LAMP",
 	"adress": "Siska 50, Kavadarci, Municipality of Kavadarci 1430",
-	"homtetel": "043400555",
-	"mobitel": "07021892",
-	"e-mail": "ristepan@gmail.com",
+	"homtetel": "+389 43 400 555",
+	"mobitel": "+389 70 218 920",
+	"email": "ristepan@gmail.com",
 	"sities": [
 		"arso.us.to",
 		"smanzy.us.to"
 	],
-	"profesonalsummary": {
+	"languages":{
+		"title":"Languages",
+		"items":[
+			["85","English"],
+			["100","Macedonian"],
+			["88","Serbian"],
+			["80","Croatian"],
+			["65","Bulgarian"],
+			["80","Bosnian"]
+		]
+	},
+	"profsum": {
 		"title": "Professional Summary",
 		"items": [
-			"Newly promoted senior developer with exceptional customer relationship building and communication skills. Well-educated in all areas of marketing, social media, and audio/visual development. Looking to obtain a role in web development in a cutting edge environment. ",
-			"Determined web developer offering more than [Number] years of expertise in fast-paced departments. Bilingual and well-spoken with the ability to work closely with people of all different backgrounds and personalities. Seeking an opportunity to oversee a team of exceptional developers in a well-established company. ",
-			"Veteran systems architect with expertise in coding, application design, defined architectures and successful project leadership. ",
-			"Systems architect with expertise in requirement gathering and analysis, architectural, component and interface design and development for web-based applications in multiple domains.",
+			[9,"Veteran systems architect with expertise in coding, application design, SQL databases and successful project leadership."],
+			[4,"Past year learned Angular, React and Laravel and when discovered Vue start to lose interest for Angular and React."],
+			[6,"Looking to obtain a role in web development in a cutting edge environment. "],
+			[5,"Seeking an opportunity to oversee a team of exceptional developers in a well-established company."]
 		]
 	},
 	"skills": {
 		"title": "Skills",
 		"items": [
-			"Java/C/C++",
-			"Expert in C++, PHP, and JavaScript",
-			"Python and Ruby proficient",
-			"Database design",
-			"Excellent problem-solving abilities",
-			"Windows and Linux",
-			"Android",
-			"Website and portal monitoring",
-			"Network maintenance",
-			"System upgrades",
-			"System backups",
-			"Data backup and retrieval",
-			"Technical specifications creation",
-			"Wordpress, Joomla, Drupal",
-			"Excellent diagnostic skills",
+			["85","VueJS" ],
+			["50","Angular"],		
+			["35","React"],			
+			["55","Laravel"],
+			["70","Wordpress"],	
+			["95","MySQL"],				
+			["70","MogoDB"],
+			["60","Oracle"],
+			["98","FirebirdSQL"],
+			["52","PostgreSQL"],    
+			["80","JavaScript"],
+			["86","PHP"],
+			["90","C/C++"],			
+			["60","Python"],		
+			["90","Pascal"]
 		]
 	},
 	"workHistory": {
 		"title": "Work History",
-		"items": [{
+		"items": [
+			{
 				"begin": "July 2017",
 				"end": "Current",
 				"title": "Web Developer",
 				"company": "Freelancer",
 				"place": "Kavadarci, macedonia",
+				"importance": 10,
 				"items": [
-					"Hands-on experience using UNIX and Apache web servers.",
-					"Implemented Google Campaigns and SEO for various types of websites.",
-					"Designed, implemented and monitored web pages and sites for continuous improvement in a fast-paced environment.",
-					"Utilized programming capabilities in PHP, SQL and JavaScript and other libraries as needed.",
-					"Converted mockups into HTML, JavaScript, AJAX and JSON."
+					[9,"Developed multiple RESTfull API with PHP and MySQL"],
+					[8,"Developed frontend SPA aplications whith VueJS"],
+					[7,"Hands-on experience using Linux and Apache web servers."],
+					[5,"Converted mockups into HTML, JavaScript, AJAX and JSON."]
 				]
 			},
 			{
-				"begin": "October 2004-June",
-				"end": "June2017",
+				"begin": "October 2004",
+				"end": "June 2017",
 				"title": "Full Stack Developer",
 				"company": "NetArt - multimedia",
 				"place": "Kavadarci, Macedonia",
+				"importance": 9,
 				"items": [
-					"Developed and implemented complex Internet and Intranet applications on multiple platforms.",
-					"Provided continued maintenance and development of bug fixes and patch sets for existing web applications.",
-					"Ensured network, system and data availability and integrity through preventative maintenance and upgrades.",
-					"Built application platform foundation to support migration from client-server product lines to enterprise architectures and services.",
-					"Developed work-flow charts and diagrams to ensure production team compliance with client deadlines.",
-					"Managed firewall, network monitoring, and server monitoring both on- and off-site.",
-					"Developed data architecture design to enable analysts to perform targeted customer analysis."
+					[9,"Developed client-server application for pharmacies, server side, and client side whit Embracadero RAD Studio and FirebirdSQL."],
+					[8,"Developed and implemented complex Internet and Intranet applications on multiple platforms."],
+					[4,"Provided continued maintenance and development of bug fixes and patch sets for existing web applications."],
+					[5,"Ensured network, system and data availability and integrity through preventative maintenance and upgrades, on LAMP servers."],
+					[4,"Built application platform foundation to support migration from client-server product lines to web-based services and applications."],
+					[5,"Managed firewall, network monitoring, and server monitoring both on- and off-site."]
 				]
 			},
 			{
@@ -75,82 +88,71 @@
 				"title": "System Administrator",
 				"company": "CodEx - computers",
 				"place": "Kavadarci, Macedonia",
+				"importance": 8,
 				"items": [
-					"Developed and created software applications for Linux and Windows systems.",
-					"Developed shared central authentication system in C++ for intranet applications.",
-					"Coded eigh websites using HTML and PHP.",
-					"Wrote C++ applications in Windows VCL architecture, using Borland C++ Builder.",
-					"Analyzed and designed relational databases using SQL.",
-					"Developed object-oriented software with Borland C++ builder.",
-					"Developed object-oriented software using Borland Delphi.",
-					"Built databases and table structures following n-tier architecture methodology for client-server applications.",
-					"Diagnosed and troubleshooting UNIX and Windows processing problems and applied solutions to increase company efficiency.",
-					"Ensured network, system and data availability and integrity through preventative maintenance and upgrades.",
-					"Streamlined and enhanced the corporate accounting and operations system.",
-					"Managed firewall, network monitoring, and server monitoring both on- and off-site.",
-					"Provided methodologies for object-oriented software development and efficient database design.",
-					"Designed and implemented new server standards for core business services.",
+					[9,"Developed and created software applications for Linux and Windows systems."],
+					[8,"Developed shared central authentication system in C++ for intranet applications."],
+					[4,"Coded eigh websites using HTML and PHP."],
+					[7,"Wrote C++ applications in Windows VCL architecture, using Borland C++ Builder."],
+					[8,"Analyzed and designed relational databases using SQL, for FirebirdSQL server"],
+					[7,"Developed object-oriented software with Borland C++ builder."],
+					[4,"Developed object-oriented software using Borland Delphi."],
+					[4,"Ensured network, system and data availability and integrity through preventative maintenance and upgrades."],
+					[5,"Managed firewall, network monitoring, and server monitoring both on- and off-site."],
+					[4,"Provided methodologies for object-oriented software development and efficient database design."]
 				]
 			},
 			{
-				"begin": "June 1987",
+				"begin": "June 1997",
 				"end": "August 1998",
 				"title": " Senior Developer",
 				"company": "LamurExport",
 				"place": "Kavadarci, Macedonia",
+				"importance": 7,
 				"items": [
-					"Gathered, organized and analyzed data on programs.",
-					"Trained and mentored junior developers and engineers.",
-					"Worked closely with customers to efficiently resolve issues.",
-					"Reviewed code and correct errors.",
-					"Collaborated with team members to create application's system analysis based on client requirements.",
-					"Worked with users to gather requirements and evaluate ease of use.",
-					"Built, tested and deployed scalable, highly available and modular software products.",
-					"Designed and developed transactional and analytical data structures.",
-					"Built databases and table structures following n-tier architecture methodology for web applications.",
-					"Modified existing software to correct errors, adapt to new hardware and improve performance.",
-					"Designed updates to existing software to meet changing customer demands.",
-					"Developed programs from the ground up using a measured, market-focused approach.",
+					[4,"Gathered, organized and analyzed data on programs."],
+					[4,"Trained and mentored junior developers and engineers."],
+					[7,"Worked closely with customers to efficiently resolve issues."],
+					[6,"Reviewed code and correct errors."],
+					[8,"Built, tested and deployed scalable, highly available and modular software products."],
+					[6,"Modified existing software to correct errors, adapt to new hardware and improve performance."],
+					[6,"Designed updates to existing software to meet changing customer demands."]
 				]
 			},
 			{
 				"begin": "May 1995",
 				"end": "May 1997",
-				"title": "Software Developer and System Administrator",
+				"title": "Junior Software Developer",
 				"company": "CAOP - Kavadarci",
 				"place": "Kavadarci, Macedonia",
+				"importance": 6,
 				"items": [
-					"Wrote clean, clear and well-tested code for various projects.",
-					"Led a team of 3 developers in the analysis and rebuild of software from the ground up through completion.",
-					"Designed and developed reports in SQL Server Reporting Services.",
-					"Modified existing software to correct errors, adapt to new hardware and improve performance.",
-					"Drafted comprehensive reports to document bugs and design flaws.",
-					"Wrote C++ applications in DOS architecture.",
-					"Wrote Pascal applications in DOS architecture.",
-					"Wrote Clipper applications in DOS architecture.",
-					"Built, tested and deployed scalable, highly available and modular software products.",
-					"Designed and developed transactional and analytical data structures.",
-					"Developed shared central authentication system in C++ for intranet applications.",
-					"Modified existing software to correct errors, adapt to new hardware and improve performance.",
-					"Implemented innovative systems for data collection, storage, and management of customer orders.",
-					"Worked closely with clients to establish problem specifications and system designs.",
-					"Wrote Clipper applications in client-server architecture.",
-					"Designed intuitive graphical user interfaces using knowledge of serial communications and database design.",
-					"Analyzed and designed relational databases.",
-					"Configured, installed and tested IBM OS/2 systems.",
-					"Configured, tested and maintained network equipment.",
-					"Planned and implemented upgrades to system hardware and software.",
-					"Set up staff workstations with PCs, phones, and laptops.",
+					[9,"Wrote clean, clear and well-tested code for various projects."],
+					[4,"Led a team of 3 developers in the analysis and rebuild of software from the ground up through completion."],
+					[9,"Designed and developed reports in IBM DB2 Server Reporting Services."],
+					[7,"Modified existing software to correct errors, adapt to new hardware and improve performance."],
+					[9,"Wrote C++ applications in DOS architecture."],
+					[4,"Wrote Pascal applications in DOS architecture."],
+					[7,"Wrote Clipper applications in DOS architecture, for POS terminals."],
+					[8,"Developed shared central authentication system in C++ for intranet applications."],
+					[4,"Wrote Clipper applications in client-server architecture."],
+					[4,"Designed intuitive graphical user interfaces using knowledge of serial communications and database design."],
+					[7,"Analyzed and designed relational databases."],
+					[7,"Configured, installed and tested IBM OS/2 systems."],
+					[4,"Configured, tested and maintained network equipment."],
+					[4,"Planned and implemented upgrades to system hardware and software."],
+					[4,"Set up staff workstations with PCs, phones, and laptops."]
 				]
 			},
 			{
 				"begin": "May 1994",
 				"end": "May 1996",
 				"title": "Teaching Intern",
-				"company": "Computer Scool - Lida Mara",
+				"company": "Computer Scool - Kavadarce",
 				"place": "Kavadarci, Macedonia",
+				"importance": 1,
 				"items": [
-					"Created a classroom environment in which children could learn respect for themselves and others."
+					"Created a classroom environment for teaching MS-Office and Corel Drow."
 				]
 			},
 			{
@@ -159,35 +161,48 @@
 				"title": "Electronic Systems Maintenance Technician",
 				"company": "FENI - industry",
 				"place": "Kavadarci, Macedonia",
+				"importance": 4,
 				"items": [
-					"Installed, repaired and tested electrical and electronic systems.",
-					"Measured and read DMM, meggers, micrometers and thickness gauges using electrical and mechanical testing instruments.",
-					"Installed electrical conduit and wiring for power, controls, and lighting.",
-					"Maintained and repaired solenoids and regulators on co-generation systems.",
-					"Operated and maintained electronic transmitting and receiving equipment, as well as digital and analog computers.",
-					"Tested, troubleshot and calibrated equipment in the shop and in the field.",
-					"Monitored control system software and stored software in secure locations.",
-					"Completed daily inspections of all electronic equipment.",
-					"Obtained measurements and readings using volt and ohmmeters, meggers, IC testers and dial indicators.",
+					[9,"Installed, repaired and tested electrical and electronic systems."],
+					[9,"Measured and read DMM, meggers, micrometers and thickness gauges using electrical and mechanical testing instruments."],
+					[9,"Maintained and repaired solenoids and regulators on co-generation systems."],
+					[9,"Operated and maintained electronic transmitting and receiving equipment, as well as digital and analog computers."],
+					[9,"Tested, troubleshot and calibrated equipment in the shop and in the field."],
+					[9,"Monitored control system software and stored software in secure locations."],
+					[9,"Completed daily inspections of all electronic equipment."],
+					[9,"Obtained measurements and readings using volt and ohmmeters, meggers, IC testers and dial indicators."]
+				]
+			},
+			{
+				"begin": "January 1988",
+				"end": "May 1995",
+				"title": "Game developer and CEO",
+				"company": "PanSoft",
+				"place": "Kavadarci, Macedonia",
+				"importance": 4,
+				"items": [
+					[9,"Developing games and small system softwares for AtariST."],
+					[9,"Developed small text procesor in C++ for AtariST."]
 				]
 			}
 		]
 	},
 	"education": {
 		"title": "Education",
-		"items": [{
+		"items": [
+			{
+				"year": 1998,
+				"degree": "Associate of Science",
+				"field": "Informatics and telecomunication",
+				"scool": "Elektrotehnicki fakultet, Skopje",
+				"place": "Skopje"
+			},
+			{
 				"year": 1982,
 				"degree": "High School Diploma",
 				"field": "Computer operator",
 				"scool": "Gimnazija Josip Broz Tito, Kavadarci",
 				"place": "Kavadarci, Macedonia"
-			},
-			{
-				"year": 1998,
-				"degree": "Associate of Science",
-				"field": "Informatics and telecomunication",
-				"scool": "Elektrotehnicki fakultet Skopje",
-				"place": "Skopje"
 			}
 		]
 	}

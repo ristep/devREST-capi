@@ -1,0 +1,25 @@
+{
+	"name": "",
+	"jobtitle": "",
+	"adress": "",
+	"homtetel": "",
+	"mobitel": "",
+	"email": "",
+	"sities": [],
+	"profsum": {
+		"title": "",
+		"items": []
+	},
+	"skills": {
+		"title": "",
+		"items": []
+	},
+	"workHistory": {
+		"title": "",
+		"items": []
+	},
+	"education": {
+		"title": "",
+		"items": []
+	}
+}
