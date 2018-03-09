@@ -8,3 +8,17 @@ Array
     [Accept-Encoding] => gzip, deflate
     [Accept-Language] => en-US,en;q=0.9,mk;q=0.8,bs;q=0.7,sr;q=0.6
 )
+
+imash vaka na 
+http://apoteka.uk.to/phpmyadmin/
+
+user: aki
+passwd: akito90
+
+baza so nekoi bezveze tabeli samo "lekovi" moze se upotrebe
+i users moze
+
+a na voa http://apoteka.uk.to demo
+neshto so se igraese ja 
+tuaka mislam ima user 
+marko marko 

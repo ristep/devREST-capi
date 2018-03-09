@@ -152,7 +152,7 @@
 				"place": "Kavadarci, Macedonia",
 				"importance": 1,
 				"items": [
-					"Created a classroom environment for teaching MS-Office and Corel Drow."
+					[5,"Created a classroom environment for teaching MS-Office and Corel Drow."]
 				]
 			},
 			{
@@ -191,7 +191,7 @@
 		"title": "Education",
 		"items": [
 			{
-				"year": 1998,
+				"year": 1988,
 				"degree": "Associate of Science",
 				"field": "Informatics and telecomunication",
 				"scool": "Elektrotehnicki fakultet, Skopje",

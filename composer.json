@@ -3,6 +3,7 @@
         "firehed/jwt": "^2.0",
         "firebase/php-jwt": "^5.0",
         "katzgrau/klogger": "dev-master",
-        "deployer/deployer": "^6.0"
+        "deployer/deployer": "^6.0",
+        "erusev/parsedown": "^1.7"
     }
 }
