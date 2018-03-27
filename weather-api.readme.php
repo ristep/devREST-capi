@@ -9,5 +9,4 @@ require "vendor/autoload.php";
 $Parsedown = new Parsedown();
 
 echo $Parsedown->text(file_get_contents('https://raw.githubusercontent.com/ristep/weather-api/master/README.md'));
-
 ?>
