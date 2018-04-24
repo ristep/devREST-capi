@@ -83,6 +83,7 @@ switch ($method) {
 					$sql = "INSERT INTO $slj->tableName(".implode(',',$ss).") VALUES (".implode(',',$lkk).");";
 					$sth = $cn->prepare($sql);
 					$rez = $sth->execute((array)$input);
+					echo $cn->lastInsertId();
 		} catch (PDOException $e) { 
 			echoErr((object)[ 'error' => 'DataBase', 'code' => 416, 'message' => 'Requested Range Not Satisfiable', 'PDO' => $e  ] );  
 		} 
